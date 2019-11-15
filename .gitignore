@@ -6,6 +6,7 @@
 /out/
 /history/
 /target/
+minikube
 *.lock
 .classpath
 .project
