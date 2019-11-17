@@ -38,7 +38,7 @@ public class WorkspaceAction extends ScenarioSteps {
     public void shouldSeeTheWorkspaceList(){
         assertThat(page.getWorkspaceList().isWorkspaceListVisible()).
                 withFailMessage("the workspace list is not visible or not present").
-                isFalse();
+                isTrue();
     }
 
 
