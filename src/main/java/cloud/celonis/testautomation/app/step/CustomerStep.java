@@ -15,13 +15,23 @@ public class CustomerStep extends ScenarioSteps {
     WorkspaceAction workspaceAction;
 
     @Step
+    public CustomerStep then(){return this;}
+
+    @Step("Customer goes to the trial cloud app")
+    public CustomerStep goToTheWebSite(){
+        loginAction.openTheSignInPage();
+        return this;
+    }
+
+    @Step
     public LoginAction onTheSignInPage(){
         return loginAction;
     }
 
     @Step
-    public WorkspaceAction inTheWorksSpaceMenu(){
+    public WorkspaceAction inTheWorkSpaceMenu(){
         return workspaceAction;
     }
+
 
 }
