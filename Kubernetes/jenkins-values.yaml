@@ -45,6 +45,7 @@ master:
     - git:4.0.0
     - ghprb:1.42.0
     - blueocean:1.21.0
+    - ws-cleanup-plugin:0.37
   # Used to approve a list of groovy functions in pipelines used the script-security plugin. Can be viewed under /scriptApproval
   scriptApproval:
     - "method groovy.json.JsonSlurperClassic parseText java.lang.String"
