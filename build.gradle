@@ -27,7 +27,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 ext {
-    slf4jVersion = '1.7.7'
+    logbackVersion = '1.2.3'
     serenityCoreVersion = '2.0.81'
     assertJVersion = '3.8.0'
     logbackVersion = '1.2.3'
@@ -40,7 +40,7 @@ dependencies {
             "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}",
             "org.assertj:assertj-core:${assertJVersion}",
-            "org.slf4j:slf4j-simple:${slf4jVersion}"
+            "ch.qos.logback:logback-classic:${logbackVersion}"
 }
 
 test {
