@@ -39,7 +39,8 @@ dependencies {
     compile "net.serenity-bdd:serenity-core:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-junit:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}",
-            "org.assertj:assertj-core:${assertJVersion}"
+            "org.assertj:assertj-core:${assertJVersion}",
+            "org.slf4j:slf4j-simple:${slf4jVersion}"
 }
 
 test {
