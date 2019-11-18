@@ -1,6 +1,7 @@
 package cloud.celonis.testautomation.app.page.processmining;
 
 
+import cloud.celonis.testautomation.app.page.element.WorkspaceAnalyses;
 import cloud.celonis.testautomation.app.page.element.WorkspaceList;
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
@@ -14,6 +15,9 @@ public class ProcessMiningPage extends PageObject {
     @FindBy(css=".workspaces")
     private WebElementFacade WORK_SPACES;
 
+    @FindBy(css="div[cesplitpanecontentdetail]")
+    private WebElementFacade ANALYSES;
+
     @WhenPageOpens
     public void waitUntilTitleAppears() {
         element(WORK_SPACES).waitUntilVisible();
@@ -21,5 +25,8 @@ public class ProcessMiningPage extends PageObject {
 
     public WorkspaceList getWorkspaceList(){
         return new WorkspaceList(WORK_SPACES);
+    }
+    public WorkspaceAnalyses getWorkspaceAnalyses(){
+        return new WorkspaceAnalyses(ANALYSES);
     }
 }

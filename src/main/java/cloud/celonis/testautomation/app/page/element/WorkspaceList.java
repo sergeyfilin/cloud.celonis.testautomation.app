@@ -14,7 +14,7 @@ public class WorkspaceList {
 
     public void selectWorkspace(String name){
         root.find(LIST).waitUntilVisible().
-                then().find(By.cssSelector(String.format("a[title='--> %s']", name))).
+                then().find(By.cssSelector(String.format("a[title*='%s']", name))).
                 then().
                 click();
     }

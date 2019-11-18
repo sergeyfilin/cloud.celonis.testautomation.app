@@ -1,9 +1,11 @@
 package cloud.celonis.testautomation.app.testdata;
 
+import java.util.Locale;
+
 public class Profile {
     private String email;
     private String name;
-    private String language;
+    private Locale locale;
     private Credentials credentials;
 
     public String getEmail() {
@@ -22,12 +24,12 @@ public class Profile {
         this.name = name;
     }
 
-    public String getLanguage() {
-        return language;
+    public Locale getLocale() {
+        return locale;
     }
 
-    public void setLanguage(String language) {
-        this.language = language;
+    public void setLocale(Locale locale) {
+        this.locale = locale;
     }
 
     public Credentials getCredentials() {
@@ -40,10 +42,11 @@ public class Profile {
 
     @Override
     public String toString() {
-        return "profile{" +
+        return "Profile{" +
                 "email='" + email + '\'' +
                 ", name='" + name + '\'' +
-                ", language='" + language + '\'' +
+                ", locale=" + locale +
+                ", credentials=" + credentials +
                 '}';
     }
 
@@ -68,8 +71,8 @@ public class Profile {
             return this;
         }
 
-        public Builder withLanguage(String language){
-            this.profile.setLanguage(language);
+        public Builder withLocale(Locale locale){
+            this.profile.setLocale(locale);
             return this;
         }
 

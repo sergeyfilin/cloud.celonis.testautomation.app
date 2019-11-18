@@ -29,8 +29,8 @@ public class WorkspaceAction extends ScenarioSteps {
     }
 
     @Step("Customer select '--> ServiceNow Ticketing' workspace")
-    public WorkspaceAction selectTicketingWorkspace(){
-        page.getWorkspaceList().selectWorkspace(Workspace.TICKETING.getSpace());
+    public WorkspaceAction selectServiceNowWorkspace(){
+        page.getWorkspaceList().selectWorkspace(Workspace.SERVICE_NOW.getSpace());
         return this;
     }
 
@@ -38,6 +38,31 @@ public class WorkspaceAction extends ScenarioSteps {
     public void shouldSeeTheWorkspaceList(){
         assertThat(page.getWorkspaceList().isWorkspaceListVisible()).
                 withFailMessage("the workspace list is not visible or not present").
+                isTrue();
+    }
+
+    @Step("Customer select '--> SAP ECC - Order to Cash' analyses overview")
+    public WorkspaceAction selectOrderToCashOverview(){
+        page.getWorkspaceAnalyses().selectOverview(Workspace.ORDER_TO_CASH.getSpace());
+        return this;
+    }
+
+    @Step("Customer select '--> SAP ECC - Purchase to Pay' analyses overview")
+    public WorkspaceAction selectPurchaseToPayOverview(){
+        page.getWorkspaceAnalyses().selectOverview(Workspace.PURCHASE_TO_PAY.getSpace());
+        return this;
+    }
+
+    @Step("Customer select '--> ServiceNow Ticketing' analyses overview")
+    public WorkspaceAction selectServiceNowOverview(){
+        page.getWorkspaceAnalyses().selectOverview(Workspace.SERVICE_NOW.getSpace());
+        return this;
+    }
+
+    @Step("Customer should see the workspace analyses on the main page")
+    public void shouldSeeTheWorkspaceAnalyses(){
+        assertThat(page.getWorkspaceAnalyses().isWorkspaceAnalysesVisible()).
+                withFailMessage("the workspace analyses overview is not visible or not present").
                 isTrue();
     }
 
