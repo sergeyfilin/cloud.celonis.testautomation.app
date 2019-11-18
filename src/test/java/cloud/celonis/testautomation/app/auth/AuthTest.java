@@ -12,10 +12,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(SerenityRunner.class)
-@WithTagValuesOf({"smoke", "authorization"})
+@WithTagValuesOf({"authorization"})
 public class AuthTest extends AbstractTest {
 
     @Test
+    @WithTagValuesOf({"smoke"})
     @Issues({"CELONIS-1", "CELONIS-2"})
     @Title("The customer should be able to login the app and see the workspace list")
     public void checkThatCustomerIsAbleToLogin(){

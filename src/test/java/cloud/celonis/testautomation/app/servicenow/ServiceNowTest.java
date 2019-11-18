@@ -17,6 +17,7 @@ public class ServiceNowTest extends AbstractTest {
     private final Credentials credentials = expectedProfile.getCredentials();
 
     @Test
+    @WithTagValuesOf({"smoke"})
     @Issues({"CELONIS-5"})
     public void checkThatCustomerIsAbleToAccessServiceNowAnalyses(){
         customer.goToTheWebSite().
