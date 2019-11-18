@@ -16,9 +16,10 @@ public class OrderToCashAnalysesAction extends ScenarioSteps {
     public OrderToCashAnalysesAction then(){return this;}
 
     @Step("Customer should see the order to cash explorer component on te analyses page")
-    public void shouldSeeTheOrderToCashExplorerComponent(){
+    public OrderToCashAnalysesAction shouldSeeTheOrderToCashExplorerComponent(){
         assertThat(page.isExplorerComponentVisible()).
                 withFailMessage("the the order to cash explorer component is not visible or not present").
                 isTrue();
+        return this;
     }
 }

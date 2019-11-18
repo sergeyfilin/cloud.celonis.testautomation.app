@@ -16,9 +16,10 @@ public class PurchaseToPayAnalysesAction extends ScenarioSteps {
     public PurchaseToPayAnalysesAction then(){return this;}
 
     @Step("Customer should see the purchase to pay explorer component on te analyses page")
-    public void shouldSeeThePurchaseToPayExplorerComponent(){
+    public PurchaseToPayAnalysesAction shouldSeeThePurchaseToPayExplorerComponent(){
         assertThat(page.isExplorerComponentVisible()).
                 withFailMessage("the the purchase to pay explorer component is not visible or not present").
                 isTrue();
+        return this;
     }
 }

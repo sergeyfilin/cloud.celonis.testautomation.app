@@ -10,6 +10,8 @@ import net.thucydides.core.annotations.WithTagValuesOf;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.List;
+
 @RunWith(SerenityRunner.class)
 @WithTagValuesOf({"analyses", "service_now"})
 public class ServiceNowTest extends AbstractTest {
@@ -17,7 +19,7 @@ public class ServiceNowTest extends AbstractTest {
     private final Credentials credentials = expectedProfile.getCredentials();
 
     @Test
-    @WithTagValuesOf({"smoke"})
+    @WithTagValuesOf({"smoke1"})
     @Issues({"CELONIS-5"})
     public void checkThatCustomerIsAbleToAccessServiceNowAnalyses(){
         customer.goToTheWebSite().
@@ -30,5 +32,10 @@ public class ServiceNowTest extends AbstractTest {
         customer.onTheWorkSpaceAnalyses().selectServiceNowOverview();
 
         customer.onServiceNowAnalyses().shouldSeeTheServiceNowExplorerComponent();
+
+        customer.onServiceNowAnalyses().selectShortestThroughputTimeAsExploreOptions().
+                then().
+                shouldSeeTheTimeOfShortestThroughputNotZero();
     }
+
 }
