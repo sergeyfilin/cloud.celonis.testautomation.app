@@ -10,8 +10,6 @@ import net.thucydides.core.annotations.WithTagValuesOf;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.util.List;
-
 @RunWith(SerenityRunner.class)
 @WithTagValuesOf({"analyses", "service_now"})
 public class ServiceNowTest extends AbstractTest {
